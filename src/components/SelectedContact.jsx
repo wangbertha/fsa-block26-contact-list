@@ -25,19 +25,18 @@ const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
     <>
         {contact ? <article>
             <h1>{contact.name}</h1>
-            <p>{contact.username}</p>
-            <p>{contact.email}</p>
-            <div>Address:
+            <p>Username: {contact.username}</p>
+            <p>Email: {contact.email}</p>
+            <div className="address">Location:
                 <p>{contact.address.street}</p>
                 <p>{contact.address.suite}</p>
                 <p>{contact.address.city}</p>
                 <p>{contact.address.zipcode}</p>
-                <p>{contact.address.geo.lat}</p>
-                <p>{contact.address.geo.lng}</p>
+                <p>Coordinates: {contact.address.geo.lat}, {contact.address.geo.lng}</p>
             </div>
-            <p>{contact.phone}</p>
-            <p>{contact.website}</p>
-            <div>Company
+            <p>Phone Number: {contact.phone}</p>
+            <p>Website: {contact.website}</p>
+            <div className="company">Company:
                 <p>{contact.company.name}</p>
                 <p>{contact.company.catchPhrase}</p>
                 <p>{contact.company.bs}</p>
