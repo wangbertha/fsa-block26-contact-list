@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ContactRow from './ContactRow';
 
 function ContactList() {
   const [contacts, setContacts] = useState(null);
@@ -34,11 +35,7 @@ function ContactList() {
         </thead>
         <tbody>
           {contacts ? contacts.map((contact) => (
-            <tr key={contact.id}>
-              <td>{contact.name}</td>
-              <td>{contact.email}</td>
-              <td>{contact.phone}</td>
-            </tr>
+            <ContactRow key={contact.id} contact={contact} />
           )) : <tr>
             <td colSpan={3}>No contacts :(</td></tr>}
         </tbody>
