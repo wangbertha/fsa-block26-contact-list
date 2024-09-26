@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const SelectedContact = ({ selectedContactId }) => {
+const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
     const [contact, setContact] = useState(null);
     const API_URL_BASE = 'https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/';
     const API_URL_RESOURCE = 'users/';
@@ -44,6 +44,7 @@ const SelectedContact = ({ selectedContactId }) => {
             </div>
         </article> : 
         <p>Error loading contact.</p>}
+        <button onClick={() => setSelectedContactId(null)}>Navigate back to contacts list</button>
     </>
   )
 }
