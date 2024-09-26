@@ -10,7 +10,10 @@ const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
         try {
             const response = await fetch(API_URL + selectedContactId);
             const responseJson = await response.json();
-            setContact(responseJson);
+            setContact(responseJson);      
+            if (!response.ok) {
+                throw new Error(responseJson.error.message);
+            }
         }
         catch (error) {
             console.log(error);
@@ -42,7 +45,7 @@ const SelectedContact = ({ selectedContactId, setSelectedContactId }) => {
                 <p>{contact.company.bs}</p>
             </div>
         </article> : 
-        <p>Error loading contact.</p>}
+        <p>Loading contact...</p>}
         <button onClick={() => setSelectedContactId(null)}>Navigate back to contacts list</button>
     </>
   )

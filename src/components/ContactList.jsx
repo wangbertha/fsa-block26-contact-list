@@ -37,7 +37,7 @@ function ContactList({ setSelectedContactId }) {
           {contacts ? contacts.map((contact) => (
             <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />
           )) : <tr>
-            <td colSpan={3}>No contacts :(</td></tr>}
+            <td colSpan={3}>Loading contacts...</td></tr>}
         </tbody>
       </table>
     </>
