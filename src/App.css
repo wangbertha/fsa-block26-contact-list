@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+table {
+  width: 720px;
+}
+
+caption {
+  width: 100%;
+}
