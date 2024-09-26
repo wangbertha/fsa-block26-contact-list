@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ContactRow from './ContactRow';
 
-function ContactList() {
+function ContactList({ setSelectedContactId }) {
   const [contacts, setContacts] = useState(null);
   const API_URL_BASE = 'https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/';
   const API_URL_RESOURCE = 'users';
@@ -35,7 +35,7 @@ function ContactList() {
         </thead>
         <tbody>
           {contacts ? contacts.map((contact) => (
-            <ContactRow key={contact.id} contact={contact} />
+            <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />
           )) : <tr>
             <td colSpan={3}>No contacts :(</td></tr>}
         </tbody>
